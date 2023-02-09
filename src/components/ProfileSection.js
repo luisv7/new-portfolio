@@ -1,5 +1,4 @@
-import { Link } from 'react-router-dom';
-import { Box } from '@mui/material';
+import { Box, Link } from '@mui/material';
 
 // CSS Files
 import './ProfileSection.css'
@@ -23,10 +22,10 @@ export default function ProfileSection({name, theme}){
                 <ProfileImage className='profile' src={profilePicture} alt={name + "'s Profile"} bColor={theme.palette.primary.contrast} />
             </Box>
             <Box sx={{display: 'flex', gap: '1.5rem', height: 'auto', justifyContent: 'center'}}>
-                <Link to={{pathname: 'https://github.com/luisv7'}} target='_blank' rel="noreferrer">
+                <Link href='https://github.com/luisv7' target='_blank'>
                     <GitHubIcon sx={{ color: 'primary.main', fontSize: 'socialIcons.fontSize' }} />
                 </Link>
-                <Link to={{pathname: 'https://www.linkedin.com/in/luis-villarreal7/'}} target='_blank' rel="noreferrer">
+                <Link href='https://www.linkedin.com/in/luis-villarreal7/' target='_blank'>
                     <LinkedInIcon sx={{ color: 'primary.main', fontSize: 'socialIcons.fontSize' }} />
                 </Link>
             </Box>
