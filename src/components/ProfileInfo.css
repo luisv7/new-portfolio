@@ -1,0 +1,18 @@
+.info{
+    margin-top: 1rem;
+    padding: 0 1rem;
+  }
+  .user-name-info{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 0.7rem;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .m-user-name-info{
+      margin-bottom: 1rem;
+      align-items: center;
+      margin: 1rem 0 2rem 0;
+    }
+  }

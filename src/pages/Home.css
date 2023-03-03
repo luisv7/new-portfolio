@@ -3,3 +3,17 @@
     -webkit-line-clamp: 3;
     -webkit-box-orient: vertical;  
 }
+.title-section{
+    font-size: 2.1rem !important;
+    font-weight: 700 !important;
+    display: flex;
+    justify-content: center;
+    margin: 0 0 1rem 0 !important;
+    align-items: center;
+}
+
+.logo{
+    height: 30px;
+    width: auto;
+    margin-right: 0.5rem;
+}
