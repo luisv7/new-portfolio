@@ -7,7 +7,7 @@ import Navbar from './components/Navbar';
 import data from './pages/project-data';
 import './App.css';
 import Footer from './components/Footer';
-import LyricsFinder from './pages/LyricsFinder';
+import ProjectPageTheme from './pages/ProjectPageTheme';
 
 const lightMode = createTheme({
   palette: {
@@ -15,7 +15,8 @@ const lightMode = createTheme({
     primary: {
       main: '#000',
       contrast: '#fff',
-      light: '#a5a6aa'
+      light: '#a5a6aa',
+      superLight: '#f0f0f0'
     },
     secondary: {
       main: '#343a40',
@@ -102,8 +103,8 @@ function App() {
             path='/' 
             element={<Home theme={theme} data={data} name={name}/>} />
           <Route 
-            path='/lyrics-finder' 
-            element={<LyricsFinder theme={theme} data={data} name={name}/>} />
+            path='/:path' 
+            element={<ProjectPageTheme theme={theme} data={data}/>} />
         </Routes>
         <Footer/>
       </BrowserRouter>

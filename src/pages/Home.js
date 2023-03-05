@@ -3,6 +3,7 @@ import {Typography, Box, Card, CardMedia, CardContent, CardActions, Button } fro
 import Grid2 from "@mui/material/Unstable_Grid2/Grid2";
 import ProfileSection from "../components/ProfileSection";
 import ProfileInfo from '../components/ProfileInfo';
+import ServicesSection from '../components/ServicesSection';
 
 // CSS
 import { motion } from "framer-motion";
@@ -32,7 +33,7 @@ export default function Home({ data, theme, name }) {
                 <ProfileSection name={name} theme={theme} />
                 <Grid2 container>
                     <ProfileInfo />
-                    <Box sx={{ padding: "1rem" }}>
+                    <Box sx={{ padding: "0 1rem" }}>
                         <Grid2 xs={12}>
                             <Typography variant="h4" component="h2" className="title-section">
                                 Projects
@@ -40,8 +41,8 @@ export default function Home({ data, theme, name }) {
                             <Grid2 container spacing={2} sx={{ display: "flex", justifyContent: "center" }}>
                                 {data.map((item, index) => {
                                     return (
-                                        <Grid2 xs={12} sm={12} md={6} lg={4} xl={3}>
-                                            <motion.div variants={fadeAnimationVariants} initial="hidden" whileInView="visible" key={index}>
+                                        <Grid2 key={index} xs={12} sm={12} md={6} lg={4} xl={3}>
+                                            <motion.div variants={fadeAnimationVariants} initial="hidden" whileInView="visible">
                                                 <Card sx={{ marginTop: "1rem" }}>
                                                     <Link to={item.path}>
                                                         <CardMedia
@@ -54,8 +55,8 @@ export default function Home({ data, theme, name }) {
                                                         />
                                                     </Link>
                                                     <CardContent>
-                                                        <Box sx={{display: 'flex'}}>
-                                                            <img className="logo" src={item.logo} alt='logo'/>
+                                                        <Box sx={{ display: "flex" }}>
+                                                            <img className="logo" src={item.logo} alt="logo" />
                                                             <Typography gutterBottom variant="h5" component="div">
                                                                 {item.title}
                                                             </Typography>
@@ -75,27 +76,36 @@ export default function Home({ data, theme, name }) {
                                                         </Typography>
                                                     </CardContent>
                                                     <CardActions>
-                                                        {
-                                                            item.gitHubURL === '#' ? 
-                                                            '' :
-                                                            <Button variant="contained" size="small" endIcon={<GitHubIcon />} href={item.gitHubURL} target="_blank">
+                                                        {item.gitHubURL === "#" ? (
+                                                            ""
+                                                        ) : (
+                                                            <Button
+                                                                variant="contained"
+                                                                size="small"
+                                                                endIcon={<GitHubIcon />}
+                                                                href={item.gitHubURL}
+                                                                target="_blank"
+                                                            >
                                                                 <Typography fontSize={theme.typography.projectBtn}>GitHub</Typography>
                                                             </Button>
-                                                        }
-                                                        <Button
-                                                            variant="contained"
-                                                            sx={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrast }}
-                                                            size="small"
-                                                            href={item.launchAppURL}
-                                                            target="_blank"
-                                                        >
-                                                            {
-                                                                item.gitHubURL === '#' ?
-                                                                <Typography fontSize={theme.typography.projectBtn}>Launch Website</Typography> :
-                                                                <Typography fontSize={theme.typography.projectBtn}>Launch App</Typography>
-                                                            }
-                                                            
-                                                        </Button>
+                                                        )}
+                                                        {item.launchAppURL === "#" ? (
+                                                            ""
+                                                        ) : (
+                                                            <Button
+                                                                variant="contained"
+                                                                sx={{ backgroundColor: theme.palette.primary.main, color: theme.palette.primary.contrast }}
+                                                                size="small"
+                                                                href={item.launchAppURL}
+                                                                target="_blank"
+                                                            >
+                                                                {item.gitHubURL === "#" ? (
+                                                                    <Typography fontSize={theme.typography.projectBtn}>Launch Website</Typography>
+                                                                ) : (
+                                                                    <Typography fontSize={theme.typography.projectBtn}>Launch App</Typography>
+                                                                )}
+                                                            </Button>
+                                                        )}
                                                         <Link to={item.path} className="no-underline">
                                                             <Button size="small" variant="outlined">
                                                                 <Typography fontSize={theme.typography.projectBtn}>Learn More</Typography>
@@ -111,6 +121,7 @@ export default function Home({ data, theme, name }) {
                         </Grid2>
                     </Box>
                 </Grid2>
+                <ServicesSection theme={theme} />
             </main>
         </>
     );
