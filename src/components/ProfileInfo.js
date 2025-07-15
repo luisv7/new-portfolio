@@ -32,7 +32,7 @@ export default function ProfileSection(){
                     <Box sx={{ display: "flex", gap: "0.5rem" }}>
                         <LocationOnIcon />
                         <Typography sx={{ fontWeight: "600", color: "primary.main" }} variant="body1" component="p">
-                            Los Angeles, CA
+                            Austin, TX
                         </Typography>
                     </Box>
                 </Grid2>

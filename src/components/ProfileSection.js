@@ -5,7 +5,7 @@ import './ProfileSection.css'
 import styled from 'styled-components';
 
 // Images
-import profilePicture from '../images/profile-picture.jpg';
+import profilePicture from '../images/luis-profile-picture.jpeg';
 
 // Icons
 import GitHubIcon from '@mui/icons-material/GitHub';
